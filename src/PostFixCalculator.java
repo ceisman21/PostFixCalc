@@ -42,16 +42,16 @@ public class PostFixCalculator {
         return (int)(numStack.pop());
     }
     private int adder(int a, int b) {
-        return 0;
+        return b+a;
     }
     private int subtractor(int a, int b) {
-        return 0;
+        return b-a;
     }
     private int multiplier(int a, int b) {
-        return 0;
+        return b*a;
     }
     private int divider(int a, int b) {
-        return 0;
+        return b/a;
     }
 
 }
