@@ -13,33 +13,33 @@ public class PostFixCalculator {
         inputArray = input.split("\\s");
     }
     public int getResult() {
-        Stack numStack = new Stack();
+        Stack<Integer> numStack = new Stack();
         for(int x = 0; inputArray.length > x; x++) {
             if (inputArray[x].equals("+")) {
-                int a = (int)(numStack.pop());
-                int b = (int)(numStack.pop());
+                int a = numStack.pop();
+                int b = numStack.pop();
                 numStack.push(adder(a,b));
             }
             else if (inputArray[x].equals("-")) {
-                int a = (int)(numStack.pop());
-                int b = (int)(numStack.pop());
+                int a = numStack.pop();
+                int b = numStack.pop();
                 numStack.push(subtractor(a,b));
             }
             else if (inputArray[x].equals("*")) {
-                int a = (int)(numStack.pop());
-                int b = (int)(numStack.pop());
+                int a = numStack.pop();
+                int b = numStack.pop();
                 numStack.push(multiplier(a,b));
             }
             else if (inputArray[x].equals("/")) {
-                int a = (int)(numStack.pop());
-                int b = (int)(numStack.pop());
+                int a = numStack.pop();
+                int b = numStack.pop();
                 numStack.push(divider(a,b));
             }
             else {
-                numStack.push(inputArray[x]);
+                numStack.push(Integer.valueOf(inputArray[x]));
             }
         }
-        return (int)(numStack.pop());
+        return (numStack.pop());
     }
     private int adder(int a, int b) {
         return b+a;
